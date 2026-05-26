@@ -1,0 +1,149 @@
+/* ── Hamburger button ── */
+.mob-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  background: rgba(240,235,227,0.06);
+  border: 1px solid rgba(240,235,227,0.18);
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1001; /* above overlay */
+}
+
+@media (max-width: 520px) {
+  .mob-menu-btn { display: flex; }
+}
+
+.mob-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #f0ebe3;
+  border-radius: 1px;
+  transition: transform 0.25s ease, opacity 0.2s ease, width 0.25s ease;
+  transform-origin: center;
+}
+
+/* Animate to X */
+.mob-menu-btn.open .mob-bar--top {
+  transform: translateY(7px) rotate(45deg);
+}
+.mob-menu-btn.open .mob-bar--mid {
+  opacity: 0;
+  width: 0;
+}
+.mob-menu-btn.open .mob-bar--bot {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Full-screen overlay ── */
+.mob-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #0a0a0a;
+  z-index: 1000;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+@media (max-width: 520px) {
+  .mob-overlay { display: flex; }
+}
+
+.mob-overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── Nav items ── */
+.mob-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.mob-nav-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(240,235,227,0.1);
+  text-decoration: none;
+  color: #f0ebe3;
+  transition: color 0.15s;
+}
+
+.mob-nav-item:first-child {
+  border-top: 1px solid rgba(240,235,227,0.1);
+}
+
+.mob-nav-link {
+  font-family: "Bebas Neue", "Arial Black", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  gap: 16px;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+.mob-nav-link:hover { color: #d40000; }
+
+/* ── Language row ── */
+.mob-nav-label {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(240,235,227,0.45);
+}
+
+.mob-lang-toggle {
+  display: flex;
+  align-items: center;
+  background: rgba(240,235,227,0.06);
+  border: 1px solid rgba(240,235,227,0.18);
+  overflow: hidden;
+  height: 40px;
+}
+
+.mob-lang-opt {
+  font-family: "Bebas Neue", "Arial Black", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  color: rgba(240,235,227,0.5);
+  background: transparent;
+  border: none;
+  padding: 0 18px;
+  height: 100%;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+
+.mob-lang-opt.active {
+  background: #d40000;
+  color: #fff;
+}
+
+.mob-lang-sep {
+  width: 1px;
+  height: 18px;
+  background: rgba(240,235,227,0.2);
+  flex-shrink: 0;
+}

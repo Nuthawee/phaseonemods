@@ -1,0 +1,198 @@
+.contact-wrap {
+  position: relative;
+}
+
+@media (max-width: 520px) {
+  .contact-wrap {
+    position: static;
+  }
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(240,235,227,0.06);
+  border: 1px solid rgba(240,235,227,0.18);
+  color: #f0ebe3;
+  font-family: "Bebas Neue", "Arial Black", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 9px 20px;
+  cursor: pointer;
+  transition: color 0.12s ease, background 0.12s ease, border-color 0.12s;
+  white-space: nowrap;
+}
+
+.contact-btn:hover,
+.contact-btn.active {
+  background: rgba(240,235,227,0.1);
+  color: #d40000;
+  border-color: rgba(240,235,227,0.3);
+}
+
+.avail-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.8); }
+}
+
+.chevron {
+  width: 11px;
+  height: 11px;
+  transition: transform 0.2s ease;
+}
+
+.chevron.flipped { transform: rotate(180deg); }
+
+.contact-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  width: 380px;
+  max-width: calc(100vw - 16px);
+  background: #1a1a1a;
+  border: 1px solid rgba(240,235,227,0.2);
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 100;
+}
+
+.contact-panel.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+/* On mobile, .contact-wrap becomes position:static so the panel
+   positions relative to the header (which has position:sticky).
+   right:0 then aligns to the header's right edge = viewport right edge. */
+@media (max-width: 520px) {
+  .contact-panel {
+    top: 100%;
+    right: 8px;
+    width: calc(100vw - 16px);
+    max-width: calc(100vw - 16px);
+  }
+}
+
+.contact-header {
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(240,235,227,0.15);
+  background: #242424;
+}
+
+.status {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.status.available { color: #22c55e; }
+.status.busy      { color: rgba(240,235,227,0.6); }
+
+.contact-list {
+  list-style: none;
+  padding: 8px 0 10px;
+  margin: 0;
+}
+
+.ci-divider {
+  padding: 12px 20px 6px;
+}
+
+.ci-divider span {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(240,235,227,0.55);
+}
+
+.contact-item {
+  display: grid;
+  grid-template-columns: 36px 90px 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 20px;
+  text-decoration: none;
+  color: #f0ebe3;
+  transition: background 0.1s;
+  cursor: pointer;
+}
+
+a.contact-item:hover {
+  background: rgba(240,235,227,0.08);
+}
+
+.contact-item.no-link {
+  opacity: 1;
+  cursor: default;
+}
+
+.ci-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: rgba(240,235,227,0.1);
+  flex-shrink: 0;
+}
+
+.ci-icon svg {
+  width: 16px;
+  height: 16px;
+  color: #f0ebe3;
+}
+
+.ci-label {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(240, 235, 227, 0.6);
+  white-space: nowrap;
+}
+
+.ci-value {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #f0ebe3;
+}
+
+.ci-empty {
+  padding: 14px 16px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: rgba(240, 235, 227, 0.6);
+}
+
+/* ── SOCIAL BRAND COLORS ── */
+.ci-icon.ig svg { color: #E1306C; }
+.ci-icon.fb svg { color: #1877F2; }
+.ci-icon.tt svg { color: #ffffff; }
+.ci-icon.yt svg { color: #FF0000; }
+.ci-icon.ln { background: transparent; padding: 0; }
+.ci-icon.ln svg { color: #06C755; }

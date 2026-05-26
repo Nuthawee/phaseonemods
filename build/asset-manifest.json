@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/phaseonemods/static/css/main.56f7400f.css",
+    "main.js": "/phaseonemods/static/js/main.8d66c721.js",
+    "index.html": "/phaseonemods/index.html",
+    "main.56f7400f.css.map": "/phaseonemods/static/css/main.56f7400f.css.map",
+    "main.8d66c721.js.map": "/phaseonemods/static/js/main.8d66c721.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.56f7400f.css",
+    "static/js/main.8d66c721.js"
+  ]
+}
