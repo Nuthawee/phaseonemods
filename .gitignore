@@ -1,3 +1,5 @@
 # Local Netlify folder
-.netlify
+assests/
+dev-tool.js
+dev-tool.html
 node_modules

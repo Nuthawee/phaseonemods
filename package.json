@@ -2,9 +2,7 @@
   "name": "photo-catalog",
   "version": "1.0.0",
   "private": true,
-
   "homepage": "https://nuthawee.github.io/phaseonemods",
-
   "dependencies": {
     "gasp": "^0.0.2",
     "gsap": "^3.15.0",
@@ -12,14 +10,14 @@
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1"
   },
-
+  "name": "p1-catalog",
+  "homepage" : "https://phaseonemods.github.io/catalog",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-
   "browserslist": {
     "production": [
       ">0.2%",
@@ -31,7 +29,6 @@
       "last 1 firefox version"
     ]
   },
-
   "devDependencies": {
     "gh-pages": "^6.3.0"
   }
